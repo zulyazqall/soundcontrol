@@ -1,0 +1,67 @@
+.enter-key {
+    position: relative;
+    width: 100px;
+    height: 70px;
+    background-color: #212121;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: -1px 1px 0 #434343, -2px 2px 0 #434343, -3px 3px 0 #434343, -4px 4px 0 #434343, -5px 5px 0 #434343;
+    transition: all 0.3s;
+    border-radius: 5px 5px 0px 5px;
+}
+
+.enter-key::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    bottom: -60px;
+    right: 0px;
+    background-color: #212121;
+    border-radius: 0 0 5px 5px;
+    box-shadow: -1px 1px 0 #434343, -2px 2px 0 #434343, -3px 3px 0 #434343, -4px 4px 0 #434343, -5px 5px 0 #434343;
+    transition: all 0.3s;
+}
+
+.enter-key:active,
+.active {
+    box-shadow: -1px 1px 0 #434343;
+    transform: translate(-5px, 5px);
+}
+
+.enter-key:active::before,
+.active::before {
+    box-shadow: -1px 1px 0 #434343;
+}
+
+.enter-key:focus {
+    outline: none;
+}
+
+/* button sound */
+.button-sound {
+    text-align: center;
+    height: 65px;
+    width: 150px;
+    line-height: 65px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #F0F0F0;
+    border-radius: 10px;
+    border-bottom: 4px solid #c0392b;
+    box-shadow: 6px 6px 6px #999;
+    user-select: none;
+    background: #e74c3c;
+    transition:  0.05s linear;
+    transition: all .05s linear;
+  }
+  
+  .button-sound:active {
+    box-shadow: 2px 2px 2px #777;
+    border-bottom: 1px solid #c0392b;
+    transform: translateY(3px);
+  }
