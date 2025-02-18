@@ -18,3 +18,9 @@ check.src = "sounds/hospital-monitor-151929.mp3";
 
 var door = new Audio();
 door.src = "sounds/hospital-door-latch-77569.mp3";
+
+var laugh = new Audio();
+laugh.src = "sounds/kids-laugh-45357";
+
+var scream = new Audio();
+scream.src = "sounds/kids-screaming-47198";
