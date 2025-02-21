@@ -11,6 +11,29 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
   <script src="js/script.js"></script>
+  <script>
+    let audio;
+
+    function pauseAudio() {
+      // If audio is not undefined and if is playing, pause it
+      if (audio && !audio.paused) {
+        audio.pause();
+        audio.currentTime = 0; // Rewind track to beginning (is you need this)
+      }
+    }
+
+    function playAudio(src) {
+      pauseAudio();             // Pause any currently playing
+      audio = new Audio();      // Save a reference
+      audio.src = src;
+      audio.play();
+    }
+
+    document.querySelectorAll("[data-audio]").forEach((elAudioBtn) => {
+      const src = elAudioBtn.dataset.audio;
+      playAudio(src);
+    });
+  </script>
 
 </head>
 
@@ -37,18 +60,27 @@
             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <audio controls>
-                  <source src="sounds/classroom-background-54177.mp3" type="audio/mpeg">
+                  <source src="sounds/Noisy Classroom Sound Effect (Download Link).mp3" type="audio/mpeg">
                   Class
                 </audio>
                 <br>
-                <button class="button-sound" onmousedown="call.play()">Call</button>
+                <button class="audio-button" data-src="sounds/old-phone-ring-272648.mp3">Call</button>
+                <button class="audio-button" data-src="sounds/Ambulance.mp3">Ambulance</button>
+                <button class="audio-button" data-src="sounds/girl-laugh-6689.mp3">chuckles</button>
+                <button class="audio-button" data-src="sounds/collapse-47652.mp3">collapse</button>
+                <button class="audio-button" data-src="sounds/kids-laugh-45357.mp3">Laugh</button>
+                <button class="audio-button" data-src="sounds/kids-screaming-47198.mp3">Scream</button>
+                <button class="audio-button" data-src="sounds/knock-on-door-6228.mp3">knock</button>
+                <button class="audio-button" data-src="sounds/ambulance-in-city-traffic-139030.mp3">road</button>
+                <button class="audio-button" data-src="sounds/a.mp3">Stop</button>
+                <!-- <button class="button-sound" onmousedown="call.play()">Call</button>
                 <button class="button-sound" onmousedown="ambulance.play()">ambulance</button>
                 <button class="button-sound" onmousedown="chuckles.play()">chuckles</button>
                 <button class="button-sound" onmousedown="collapse.play()">Collapse</button>
                 <button class="button-sound" onmousedown="laugh.play()">Laugh</button>
                 <button class="button-sound" onmousedown="scream.play()">Scream</button>
                 <button class="button-sound" onmousedown="knock.play()">knock</button>
-                <button class="button-sound" onmousedown="road.play()">road</button>
+                <button class="button-sound" onmousedown="road.play()">road</button> -->
 
                 <p></p>
 
@@ -65,11 +97,12 @@
             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="accordion-body">
                 <audio controls>
-                  <source src="sounds/hospital-car-park-ambiance-2-139257.mp3" type="audio/mpeg">
+                  <source src="sounds/Sound Effect - Hospital.mp3" type="audio/mpeg">
                 </audio>
                 <br>
-                <button class="button-sound" onmousedown="walk.play()">Walk</button>
-                <button class="button-sound" onmousedown="check.play()">Medical</button>
+                <button class="audio-button" data-src="sounds/walk.mp3">walk</button>
+                <button class="audio-button" data-src="sounds/hospital-monitor-151929.mp3">medical</button>
+                <button class="audio-button" data-src="sounds/a.mp3">Stop</button>
               </div>
             </div>
           </div>
@@ -86,9 +119,10 @@
                   <source src="sounds/medical-office-building-lobby-29737.mp3" type="audio/mpeg">
                 </audio>
                 <br>
-                <button class="button-sound" onmousedown="walk.play()">Walk</button>
-                <button class="button-sound" onmousedown="door.play()">Door</button>
-                <button class="button-sound" onmousedown="out.play()">Outro</button>
+                <button class="audio-button" data-src="sounds/walk.mp3">walk</button>
+                <button class="audio-button" data-src="sounds/knock-on-door-6228.mp3">door</button>
+                <button class="audio-button" data-src="sounds/happy-outro-8110.mp3">outro</button>
+                <button class="audio-button" data-src="sounds/a.mp3">Stop</button>
               </div>
             </div>
           </div>
@@ -134,6 +168,20 @@
     </div>
   </footer>
 
+  <script>
+    let currentAudio = null;
+
+    document.querySelectorAll('.audio-button').forEach(button => {
+      button.addEventListener('click', () => {
+        if (currentAudio) {
+          currentAudio.pause();
+        }
+
+        currentAudio = new Audio(button.getAttribute('data-src'));
+        currentAudio.play();
+      });
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>

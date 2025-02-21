@@ -5,7 +5,7 @@ var chuckles = new Audio();
 chuckles.src = "sounds/girl-laugh-6689.mp3";
 
 var ambulance = new Audio();
-ambulance.src = "sounds/ambulance-6399.mp3";
+ambulance.src = "sounds/Ambulance.mp3";
 
 var collapse = new Audio();
 collapse.src = "sounds/collapse-47652.mp3";
@@ -33,3 +33,4 @@ road.src = "sounds/ambulance-in-city-traffic-139030.mp3";
 
 var out = new Audio();
 out.src = "sounds/happy-outro-8110.mp3";
+

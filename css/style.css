@@ -65,3 +65,30 @@
     border-bottom: 1px solid #c0392b;
     transform: translateY(3px);
   }
+
+
+  /* audio button  */
+.audio-button {
+    text-align: center;
+    height: 65px;
+    width: 150px;
+    line-height: 65px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #F0F0F0;
+    border-radius: 10px;
+    border-bottom: 4px solid #777;
+    box-shadow: 6px 6px 6px #053b0b;
+    user-select: none;
+    background: #105506;
+    transition:  0.05s linear;
+    transition: all .05s linear;
+  }
+  
+  .audio-button:active {
+    box-shadow: 2px 2px 2px #777;
+    border-bottom: 1px solid #054920;
+    transform: translateY(3px);
+  }
